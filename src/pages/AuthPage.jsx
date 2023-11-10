@@ -32,7 +32,7 @@ const AuthPage = () => {
     if (signUp) {
       createUserWithEmailAndPassword(auth, email, pass)
         .then(() => {
-          toast.success("kullanıcı başarılı bir şekilde kaydedildi");
+          toast.success("the user was successfully signed up");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -42,7 +42,7 @@ const AuthPage = () => {
     } else {
       signInWithEmailAndPassword(auth, email, pass)
         .then(() => {
-          toast.success("kullanıcı başarılı bir şekilde giriş yaptı");
+          toast.success("user successfully logged in");
           navigate("/userAccount");
         })
         .catch((error) => {
@@ -62,13 +62,13 @@ const AuthPage = () => {
   return (
     <section className="h-screen grid place-items-center">
       <div className="bg-[#047857] flex flex-col gap-10 py-16 px-32 rounded-xl ">
-        <h1 className="text-center font-bold text-xl">--Register or Log in--</h1>
+        <h1 className="text-center font-bold text-xl">--Register and Log in--</h1>
         <button
           onClick={handleGoogle}
           className="flex items-center bg-white py-2 px-10 rounded-full text-black cursor-pointer gap-5 "
         >
           <img className="h-[20px]" src="./google-logo.svg" />
-          <span className="whitespace-nowrap">Google ile giriş yap</span>
+          <span className="whitespace-nowrap">Sign in with Google</span>
         </button>
 
         <form onSubmit={handleSubmit} className="flex flex-col">
@@ -101,18 +101,18 @@ const AuthPage = () => {
 
           <div className="flex flex-col items-center  ">
             <button className="bg-white w-full text-black mt-10 rounded-full p-1 font-bold transition hover:bg-gray-300">
-              {signUp ? "Kaydol" : " Giriş Yap"}
+              {signUp ? "Sign up" : " Sign in in to your account"}
             </button>
 
             <p className="mt-4 flex gap-4 ">
               <span className="text-black ">
-                {signUp ? "Hesabınız varsa" : "Hesabınız yoksa"}
+                {signUp ? "Have an account" : "Don't have an account"}
               </span>
               <span
                 className="cursor-pointer text-blue-900 text-xl underline hover:text-white"
                 onClick={() => setSignUp(!signUp)}
               >
-                {signUp ? "Giriş Yapın" : "Kaydolun"}
+                {signUp ? "Sign in" : "Sign up"}
               </span>
             </p>
           </div>
