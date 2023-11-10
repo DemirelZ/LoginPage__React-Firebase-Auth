@@ -5,6 +5,7 @@ import AuthPage from './pages/AuthPage'
 import ProtectedRoute from './pages/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
 import UserAccount from './pages/UserAccount'
+import ResetPasswordPage from './pages/ResetPasswordPage'
 
 
 function App() {
@@ -16,10 +17,11 @@ function App() {
     <Routes>
 
       <Route path='/' element={<AuthPage/>} />
-      <Route path='/userAccount' element={<UserAccount/>} />
+      {/* <Route path='/userAccount' element={<UserAccount/>} /> */}
+      <Route path='/resetPasswordPage' element={<ResetPasswordPage/>} />
 
       <Route element={<ProtectedRoute/>}>
-        <Route path='/login' element={<LoginPage/>} />
+      <Route path='/userAccount' element={<UserAccount/>} />
       </Route>
 
     </Routes>

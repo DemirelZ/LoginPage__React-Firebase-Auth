@@ -54,9 +54,9 @@ const AuthPage = () => {
   };
 
   const resetPassword = () => {
-    sendPasswordResetEmail(auth, email).then(() =>
-      toast.info("password reset link sent to your email")
-    );
+    navigate('/resetPasswordPage')
+
+   
   };
 
   return (
